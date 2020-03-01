@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logopic from "../../statics/logo.png";
+import logoPic from "../../statics/logo.png";
 
 export const HeaderWrapper = styled.div`
   position: relative;
@@ -13,13 +13,89 @@ export const Logo = styled.a`
   display: block;
   width: 100px;
   height: 56px;
-  background: url(${logopic});
+  background: url(${logoPic});
   background-size: contain;
 `;
 
 export const Nav = styled.div`
   width: 960px;
   height: 100%;
+  padding-right: 70px;
+  padding-right: 70px;
+  box-sizing: border-box;
   margin: 0 auto;
-  background: green;
+`;
+export const NavItem = styled.div`
+  line-height: 56px;
+  padding: 0 15px;
+  font-size: 17px;
+  color: #333;
+  &.left {
+    float: left;
+  }
+  &.right {
+    float: right;
+    color: #969696;
+  }
+  &.active {
+    color: #ea6f5a;
+  }
+`;
+
+export const SearchWrapper = styled.div`
+  position: relative;
+  float: left;
+  .iconfont {
+    position: absolute;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    right: 5px;
+    bottom: 5px;
+    text-align: center;
+  }
+`;
+
+export const NavSearch = styled.input.attrs({
+  placeholder: "Search"
+})`
+  width: 160px;
+  height: 38px;
+  padding: 0 30px 0 20px;
+  box-sizing: border-box;
+  margin-top: 9px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 19px;
+  background: #eee;
+  font-size: 14px;
+  color: #666;
+  &::placeholder {
+    color: #999;
+  }
+`;
+
+export const Addition = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 56px;
+`;
+
+export const Button = styled.div`
+  float: right;
+  line-height: 38px;
+  margin-top: 9px;
+  margin-right: 20px;
+  border-radius: 19px;
+  font-size: 14px;
+  border: 1px solid #ec6149;
+  padding: 0 20px;
+  &.reg {
+    color: #ec6149;
+  }
+  &.writting {
+    color: #fff;
+    background: #ec6149;
+  }
 `;
