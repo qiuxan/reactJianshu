@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import {
   SearchWrapper,
@@ -11,25 +12,6 @@ import {
   NavItem
 } from "./style";
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      focused: false
-    };
-    this.handleInputFocus = this.handleInputFocus.bind(this);
-    this.handleInputBlr = this.handleInputBlr.bind(this);
-  }
-  handleInputFocus() {
-    this.setState({
-      focused: true
-    });
-  }
-  handleInputBlr() {
-    this.setState({
-      focused: false
-    });
-  }
-
   render() {
     return (
       <HeaderWrapper>
@@ -45,18 +27,18 @@ class Header extends Component {
           <SearchWrapper>
             <CSSTransition
               timeout={200}
-              in={this.state.focused}
+              in={this.props.focused}
               classNames="slide"
             >
               <NavSearch
                 // key="transition-group-content"
-                className={this.state.focused ? "focused" : ""}
-                onFocus={this.handleInputFocus}
-                onBlur={this.handleInputBlr}
+                className={this.props.focused ? "focused" : ""}
+                onFocus={this.props.handleInputFocus}
+                onBlur={this.props.handleInputBlur}
               ></NavSearch>
             </CSSTransition>{" "}
             <span
-              className={this.state.focused ? "iconfont focused" : "iconfont"}
+              className={this.props.focused ? "iconfont focused" : "iconfont"}
             >
               &#xe62b;
             </span>
@@ -75,4 +57,26 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+
+const mapStateToProps = state => {
+  return {
+    focused: state.focused
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    handleInputFocus() {
+      const action = {
+        type: "search_focused"
+      };
+      dispatch(action);
+    },
+    handleInputBlur() {
+      const action = {
+        type: "search_blured"
+      };
+      dispatch(action);
+    }
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
