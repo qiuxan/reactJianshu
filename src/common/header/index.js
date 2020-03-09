@@ -11,8 +11,36 @@ import {
   HeaderWrapper,
   Logo,
   Nav,
-  NavItem
+  NavItem,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchinforSwitch,
+  SearchInfoItem,
+  SearchInfoList
 } from "./style";
+
+const getListArea = show => {
+  if (show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          Hot Keywords
+          <SearchinforSwitch>Switch Words</SearchinforSwitch>
+        </SearchInfoTitle>
+        <SearchInfoList>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+          <SearchInfoItem>Education</SearchInfoItem>
+        </SearchInfoList>
+      </SearchInfo>
+    );
+  } else {
+    return null;
+  }
+};
 
 const Header = props => {
   return (
@@ -38,6 +66,7 @@ const Header = props => {
           <span className={props.focused ? "iconfont focused" : "iconfont"}>
             &#xe62b;
           </span>
+          {getListArea(props.focused)}
         </SearchWrapper>
       </Nav>
 
@@ -52,52 +81,6 @@ const Header = props => {
     </HeaderWrapper>
   );
 };
-// class Header extends Component {
-//   render() {
-//     return (
-//       <HeaderWrapper>
-//         <Logo href="/" />
-//         <Nav>
-//           <NavItem className="left active">Home Page</NavItem>
-//           <NavItem className="left">Download App</NavItem>
-//           <NavItem className="right">Login</NavItem>
-//           <NavItem className="right">
-//             <span className="iconfont">&#xe636;</span>
-//           </NavItem>
-
-//           <SearchWrapper>
-//             <CSSTransition
-//               timeout={200}
-//               in={this.props.focused}
-//               classNames="slide"
-//             >
-//               <NavSearch
-//                 // key="transition-group-content"
-//                 className={this.props.focused ? "focused" : ""}
-//                 onFocus={this.props.handleInputFocus}
-//                 onBlur={this.props.handleInputBlur}
-//               ></NavSearch>
-//             </CSSTransition>{" "}
-//             <span
-//               className={this.props.focused ? "iconfont focused" : "iconfont"}
-//             >
-//               &#xe62b;
-//             </span>
-//           </SearchWrapper>
-//         </Nav>
-
-//         <Addition>
-//           <Button className="writting">
-//             <span className="iconfont">&#xe6e5; </span>
-//             Write Something
-//           </Button>
-
-//           <Button className="reg">Register</Button>
-//         </Addition>
-//       </HeaderWrapper>
-//     );
-//   }
-// }
 
 const mapStateToProps = state => {
   return {
