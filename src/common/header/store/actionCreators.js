@@ -8,6 +8,18 @@ export const searchBlur = () => ({
   type: actionTypes.SEAECH_BLUR,
 });
 
+export const mouseEnter = () => ({
+  type: actionTypes.MOUSE_ENTER,
+});
+export const mouseLeave = () => ({
+  type: actionTypes.MOUSE_LEAVE,
+});
+
+export const changePage = (page) => ({
+  type: actionTypes.CHANGE_PAGE,
+  page,
+});
+
 export const getList = () => {
   return (dispatch) => {
     axios
@@ -16,7 +28,7 @@ export const getList = () => {
         // console.log(res);
         const data = res.data;
         dispatch(changeList(data.data));
-        console.log(data);
+        // console.log(data);
       })
       .catch(() => {
         console.log("error");
@@ -26,4 +38,5 @@ export const getList = () => {
 const changeList = (data) => ({
   type: actionTypes.CHANGE_LIST,
   data: fromJS(data),
+  totalPage: Math.ceil(data.length / 10),
 });
