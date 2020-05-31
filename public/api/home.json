@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "data": {
+    "topicList": [
+      {
+        "id": 1,
+        "'title'": "hot topic",
+        "imgUrl": "https://i.stack.imgur.com/adATT.jpg"
+      },
+      {
+        "id": 2,
+        "title": "painting",
+        "imgUrl": "https://image.shutterstock.com/image-photo/brushes-paints-accessories-drawing-260nw-1113880988.jpg"
+      }
+    ],
+    "articleList": [
+      {
+        "id": 1,
+        "title": "1Trump's Twitter wars offer a surreal glimpse into a President's mind as stark 100,000 deaths landmark looms",
+        "desc": "4(CNN)Sometime in the next few days, the 100,000th American will succumb to Covid-19 in a pandemic that President Donald Trump once predicted would just miraculously disappear.",
+        "imgUrl": "https://pmcdeadline2.files.wordpress.com/2019/10/shutterstock_editorial_10434333bm.jpg"
+      },
+      {
+        "id": 2,
+        "title": "2Trump's Twitter wars offer a surreal glimpse into a President's mind as stark 100,000 deaths landmark looms",
+        "desc": "3(CNN)Sometime in the next few days, the 100,000th American will succumb to Covid-19 in a pandemic that President Donald Trump once predicted would just miraculously disappear.",
+        "imgUrl": "https://pmcdeadline2.files.wordpress.com/2019/10/shutterstock_editorial_10434333bm.jpg"
+      },
+      {
+        "id": 3,
+        "title": "3Trump's Twitter wars offer a surreal glimpse into a President's mind as stark 100,000 deaths landmark looms",
+        "desc": "2(CNN)Sometime in the next few days, the 100,000th American will succumb to Covid-19 in a pandemic that President Donald Trump once predicted would just miraculously disappear.",
+        "imgUrl": "https://pmcdeadline2.files.wordpress.com/2019/10/shutterstock_editorial_10434333bm.jpg"
+      },
+      {
+        "id": 4,
+        "title": "4Trump's Twitter wars offer a surreal glimpse into a President's mind as stark 100,000 deaths landmark looms",
+        "desc": "1(CNN)Sometime in the next few days, the 100,000th American will succumb to Covid-19 in a pandemic that President Donald Trump once predicted would just miraculously disappear.",
+        "imgUrl": "https://pmcdeadline2.files.wordpress.com/2019/10/shutterstock_editorial_10434333bm.jpg"
+      }
+    ],
+
+    "recommentList": [
+      {
+        "id": 1,
+        "imgUrl": "https://e6v5e5f5.rocketcdn.me/wp-content/uploads/2018/12/AAA.jpg"
+      },
+      {
+        "id": 2,
+        "imgUrl": "https://e6v5e5f5.rocketcdn.me/wp-content/uploads/2020/05/a-19-1280x640.jpg.webp"
+      }
+    ]
+  }
+}
