@@ -2,22 +2,38 @@ import { fromJS } from "immutable";
 import * as constants from "./constants";
 const defaultState = fromJS({
   topicList: [],
-
   articleList: [],
   recommentList: [],
+  articlePage: 1,
+  showScroll: true,
 });
+
+const changHomeData = (state, action) => {
+  return state.merge({
+    topicList: fromJS(action.topicList),
+    articleList: fromJS(action.articleList),
+
+    recommentList: fromJS(action.recommentList),
+  });
+};
+
+const addArticleList = (state, action) => {
+  return state.merge({
+    articleList: state.get("articleList").concat(action.list),
+    articlePage: action.nextPage,
+  });
+};
 
 export default (state = defaultState, action) => {
   switch (action.type) {
     case constants.CHANGE_HOME_DATA:
-      return state.merge({
-        topicList: fromJS(action.topicList),
-        articleList: fromJS(action.articleList),
+      return changHomeData(state, action);
 
-        recommentList: fromJS(action.recommentList),
-      });
+    case constants.ADD_ARTICLE_LIST:
+      return addArticleList(state, action);
 
-    // console.log(action);
+    case constants.TOGGLE_SCROLL_TOP:
+      return state.set("showScroll", action.show);
 
     default:
       return state;
