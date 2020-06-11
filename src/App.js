@@ -12,17 +12,16 @@ import Detail from "./pages/detail";
 function App() {
   return (
     <Provider store={store}>
-      <div>
-        <GlobalStyle />
-        <IconlStyle />
-        <Header />
-        <BrowserRouter>
-          <div>
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/detail" exact component={Detail}></Route>
-          </div>
-        </BrowserRouter>
-      </div>
+      <GlobalStyle />
+      <IconlStyle />
+
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/detail" exact component={Detail}></Route>
+        </div>
+      </BrowserRouter>
     </Provider>
   );
 }
